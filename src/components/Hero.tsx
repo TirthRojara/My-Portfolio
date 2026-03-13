@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronDown, Sparkles, ArrowRight } from 'lucide-react'
 
-const TYPING_TEXTS = ['MERN Stack Developer', 'Full Stack Engineer', 'React Specialist', 'Node.js Expert']
+const TYPING_TEXTS = ['MERN Stack Developer', 'Full Stack Web Developer', 'React Developer', 'Node.js Developer', 'Backend Engineer']
 
 export default function Hero() {
   const textRef = useRef<HTMLSpanElement>(null)
@@ -130,10 +130,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
+          className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          I build <span className="text-indigo-400 font-semibold">scalable full-stack web applications</span> with 
-          clean code, modern architecture, and delightful user experiences.
+          I build <span className="text-indigo-400 font-semibold">scalable full-stack web applications</span> using modern technologies, clean architecture, and efficient backend systems.
         </motion.p>
 
         {/* CTA Buttons */}

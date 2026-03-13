@@ -8,21 +8,21 @@ const highlights = [
   {
     icon: Code2,
     title: 'Clean Code',
-    desc: 'Writing maintainable, readable, and well-documented code following best practices.',
+    desc: 'Writing maintainable and readable code with clear structure, strong conventions, and best practices.',
     color: 'from-indigo-500 to-blue-500',
     glow: 'shadow-indigo-500/20',
   },
   {
     icon: Layers,
     title: 'Scalable Architecture',
-    desc: 'Building systems that scale horizontally with microservices and event-driven patterns.',
+    desc: 'Building backend systems that scale horizontally, real-time communication, and efficient API architecture.',
     color: 'from-purple-500 to-pink-500',
     glow: 'shadow-purple-500/20',
   },
   {
     icon: Cpu,
     title: 'Modern Technologies',
-    desc: 'Leveraging the latest in the JavaScript ecosystem to deliver cutting-edge solutions.',
+    desc: 'Using modern JavaScript technologies like React, Next.js, Node.js, and TypeScript to build efficient and scalable applications.',
     color: 'from-cyan-500 to-teal-500',
     glow: 'shadow-cyan-500/20',
   },
@@ -55,7 +55,7 @@ export default function About() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-3xl sm:text-5xl font-black text-center mb-16"
         >
-          Crafting Digital <span className="gradient-text">Experiences</span>
+          Building Modern <span className="gradient-text">Full-Stack </span> Applications
         </motion.h2>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -75,26 +75,26 @@ export default function About() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-white">Tirth Rojara</h3>
-                <p className="text-sm text-indigo-400 font-mono">MERN Stack Developer</p>
+                <p className="text-sm text-indigo-400 font-mono">Full Stack Developer</p>
                 <p className="text-xs text-slate-500 mt-1">India 🇮🇳 · Available for work</p>
               </div>
             </div>
 
             <p className="text-slate-300 text-lg leading-relaxed mb-6">
-              I&apos;m a passionate <span className="text-indigo-400 font-semibold">MERN Stack Developer</span> who 
-              thrives on building scalable, production-ready full-stack web applications. My toolkit spans from 
-              databases to UIs, covering every layer of the modern web.
+              I&apos;m a passionate <span className="text-indigo-400 font-semibold">Full Stack Developer</span> who enjoys building scalable, production-ready web applications. I focus on writing clean, maintainable code and designing systems that perform reliably at scale.
             </p>
-            <p className="text-slate-400 leading-relaxed mb-8">
-              I love working across the entire stack — from designing efficient 
-              <span className="text-cyan-400"> MongoDB</span> schemas and building robust 
-              <span className="text-green-400"> Express.js</span> APIs, to crafting beautiful 
-              <span className="text-blue-400"> React</span> UIs powered by scalable 
-              <span className="text-yellow-400"> Node.js</span> backends.
+            <p className="text-slate-300 leading-relaxed mb-8">
+              My experience spans the full stack — from designing efficient 
+              <span className="text-cyan-400"> database schemas</span> and building robust 
+              <span className="text-green-400"> Node.js</span> and
+               <span className="text-green-400"> Express.js</span> APIs, to creating modern, responsive 
+              <span className="text-blue-400"> React</span> user interfaces powered by 
+              <span className="text-purple-400"> Next.js</span>.
             </p>
 
             <div className="flex flex-wrap gap-3">
-              {['Open to Work', 'Fast Learner', 'Team Player', 'Problem Solver'].map((tag) => (
+              {/* {['Open to Work', 'Fast Learner', 'Team Player', 'Problem Solver'].map((tag) => ( */}
+              {['Real-time Systems', 'Clean Architecture', 'Dockerized Apps'].map((tag) => (
                 <span key={tag} className="px-4 py-1.5 rounded-full glass border border-white/8 text-xs font-medium text-slate-300">
                   ✦ {tag}
                 </span>
