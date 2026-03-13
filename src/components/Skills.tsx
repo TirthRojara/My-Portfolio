@@ -86,8 +86,8 @@ function SkillLogo({ skill, delay, inView }: { skill: Skill; delay: number; inVi
       initial={{ opacity: 0, scale: 0.8 }}
       animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
       transition={{ duration: 0.5, delay, type: 'spring', stiffness: 200, damping: 10 }}
-      whileHover={{ scale: 1.05, y: -5 }}
-      className="flex flex-col items-center justify-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group cursor-default shadow-lg hover:shadow-xl"
+      whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.15, ease: 'easeOut' } }}
+      className="flex flex-col items-center justify-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-150 group cursor-default shadow-lg hover:shadow-xl"
     >
       <div className="w-12 h-12 flex items-center justify-center relative">
         <div className="absolute inset-0 bg-white/5 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

@@ -37,9 +37,13 @@ export default function Navbar() {
   }, [])
 
   const handleNavClick = (href: string) => {
-    setIsOpen(false)
     const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    if (!el) return
+    setIsOpen(false)
+    // Wait for menu close animation (200ms) to finish, then scroll
+    setTimeout(() => {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }, 250)
   }
 
   return (
@@ -47,8 +51,9 @@ export default function Navbar() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
+      style={{ border: 'none' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'glass border-b border-white/5 shadow-lg shadow-black/20' : 'bg-transparent'
+        scrolled || isOpen ? 'glass shadow-lg shadow-black/20 bg-[#0a0a1a]/60 backdrop-blur-xl' : 'bg-transparent'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,7 +68,7 @@ export default function Navbar() {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
               <Code2 className="w-5 h-5 text-white" />
             </div>
-            <span className="font-bold text-lg gradient-text font-mono">TR.</span>
+            <span className="font-bold text-lg gradient-text font-mono">TR</span>
           </motion.div>
 
           {/* Desktop nav */}
@@ -90,7 +95,7 @@ export default function Navbar() {
           </div>
 
           {/* CTA button */}
-          <div className="hidden md:block">
+          <div className="invisible">
             <motion.button
               onClick={() => handleNavClick('#contact')}
               whileHover={{ scale: 1.05 }}
@@ -120,7 +125,7 @@ export default function Navbar() {
               transition={{ duration: 0.2 }}
               className="md:hidden overflow-hidden"
             >
-              <div className="py-3 space-y-1 border-t border-white/5">
+              <div className="py-3 space-y-1 border-t border-white/5 relative z-50">
                 {navLinks.map((link, i) => (
                   <motion.button
                     key={link.href}
@@ -128,7 +133,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05 }}
                     onClick={() => handleNavClick(link.href)}
-                    className="block w-full text-left px-4 py-2.5 text-sm font-medium text-slate-400 hover:text-white hover:bg-white/5 rounded-lg transition-all"
+                    className="block w-full text-left px-4 py-2.5 text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-all"
                   >
                     {link.label}
                   </motion.button>

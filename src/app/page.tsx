@@ -20,9 +20,11 @@ export default function Home() {
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/20 to-transparent" />
       </div>
 
+      {/* Navbar - outside content wrapper for proper z-index stacking */}
+      <Navbar />
+
       {/* Content layers */}
       <div className="relative z-10">
-        <Navbar />
         <Hero />
         <About />
         <Skills />

@@ -164,13 +164,13 @@ export default function Hero() {
         </motion.div>
 
         {/* Tech stack pills */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 1.1 }}
           className="flex flex-wrap justify-center gap-3 mt-14"
         >
-          {['MongoDB', 'Express.js', 'React', 'Node.js', 'TypeScript'].map((tech, i) => (
+          {['Node.js', 'Express.js', 'Next.js', 'React', 'TypeScript'].map((tech, i) => (
             <motion.span
               key={tech}
               initial={{ opacity: 0, scale: 0.8 }}
@@ -181,7 +181,7 @@ export default function Hero() {
               {tech}
             </motion.span>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Scroll indicator */}
