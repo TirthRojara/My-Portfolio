@@ -2,6 +2,15 @@
 
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
+import { Network } from 'lucide-react'
+import React from 'react'
+
+interface Skill {
+  name: string;
+  logo?: string;
+  icon?: React.ElementType;
+  color?: string;
+}
 
 const skillCategories = [
   {
@@ -11,14 +20,18 @@ const skillCategories = [
     borderColor: 'border-blue-500/20',
     glowColor: 'shadow-blue-500/10',
     skills: [
-      { name: 'HTML5', level: 95 },
-      { name: 'CSS3', level: 95 },
-      { name: 'JavaScript (ES6+)', level: 90 },
-      { name: 'TypeScript', level: 82 },
-      { name: 'React.js', level: 90 },
-      { name: 'Redux', level: 80 },
-      { name: 'Next.js', level: 80 },
-      { name: 'Tailwind CSS', level: 90 },
+      { name: 'Next.js', logo: 'nextdotjs/white' },
+      { name: 'React.js', logo: 'react/61DAFB' },
+      { name: 'JavaScript', logo: 'javascript/F7DF1E' },
+      { name: 'TypeScript', logo: 'typescript/3178C6' },
+      { name: 'HTML5', logo: 'html5/E34F26' },
+      { name: 'CSS3', logo: 'css/1572B6' },
+      { name: 'Redux', logo: 'redux/764ABC' },
+      { name: 'Tailwind CSS', logo: 'tailwindcss/06B6D4' },
+      { name: 'Shadcn/UI', logo: 'shadcnui/white' },
+      { name: 'React Router', logo: 'reactrouter/CA4245' },
+      { name: 'TanStack', logo: 'tanstack/white' },
+      { name: 'React Hook Form', logo: 'reacthookform/EC5990' },
     ],
   },
   {
@@ -28,11 +41,14 @@ const skillCategories = [
     borderColor: 'border-emerald-500/20',
     glowColor: 'shadow-emerald-500/10',
     skills: [
-      { name: 'Node.js', level: 88 },
-      { name: 'Express.js', level: 87 },
-      { name: 'REST APIs', level: 90 },
-      { name: 'Mongoose', level: 83 },
-      { name: 'Prisma', level: 78 },
+      { name: 'Node.js', logo: 'nodedotjs/339933' },
+      { name: 'Express.js', logo: 'express/white' },
+      { name: 'REST APIs', icon: Network, color: 'text-slate-300 group-hover:text-white' },
+      { name: 'Mongoose', logo: 'mongoose/880000' },
+      { name: 'Prisma', logo: 'prisma/white' },
+      { name: 'Socket.IO', logo: 'socketdotio/white' },
+      { name: 'Razorpay', logo: 'razorpay/white' },
+      { name: 'JWT', logo: 'jsonwebtokens/white' },
     ],
   },
   {
@@ -42,41 +58,54 @@ const skillCategories = [
     borderColor: 'border-orange-500/20',
     glowColor: 'shadow-orange-500/10',
     skills: [
-      { name: 'MongoDB', level: 88 },
-      { name: 'PostgreSQL', level: 80 },
-      { name: 'Redis', level: 72 },
+      { name: 'PostgreSQL', logo: 'postgresql/4169E1' },
+      { name: 'MongoDB', logo: 'mongodb/47A248' },
+      { name: 'Redis', logo: 'redis/FF4438' },
     ],
   },
   {
-    title: 'Tools & DevOps',
+    title: 'Tools',
     icon: '🛠️',
     color: 'from-pink-500 to-rose-500',
     borderColor: 'border-pink-500/20',
     glowColor: 'shadow-pink-500/10',
     skills: [
-      { name: 'Git & GitHub', level: 90 },
-      { name: 'Docker', level: 70 },
-      { name: 'Postman', level: 88 },
+      { name: 'Git', logo: 'git/F05032' },
+      { name: 'GitHub', logo: 'github/white' },
+      { name: 'Docker', logo: 'docker/2496ED' },
+      { name: 'Postman', logo: 'postman/FF6C37' },
+      { name: 'Jest', logo: 'jest/C21325' },
     ],
   },
 ]
 
-function SkillBar({ name, level, delay, inView }: { name: string; level: number; delay: number; inView: boolean }) {
+function SkillLogo({ skill, delay, inView }: { skill: Skill; delay: number; inView: boolean }) {
+  const Icon = skill.icon
   return (
-    <div className="space-y-1.5">
-      <div className="flex justify-between items-center">
-        <span className="text-sm font-medium text-slate-300">{name}</span>
-        <span className="text-xs font-mono text-slate-500">{level}%</span>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+      transition={{ duration: 0.5, delay, type: 'spring', stiffness: 200, damping: 10 }}
+      whileHover={{ scale: 1.05, y: -5 }}
+      className="flex flex-col items-center justify-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-300 group cursor-default shadow-lg hover:shadow-xl"
+    >
+      <div className="w-12 h-12 flex items-center justify-center relative">
+        <div className="absolute inset-0 bg-white/5 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {Icon ? (
+          <Icon className={`w-9 h-9 ${skill.color} relative z-10 transition-transform duration-300 group-hover:scale-110`} />
+        ) : (
+          <img 
+            src={`https://cdn.simpleicons.org/${skill.logo}`} 
+            alt={`${skill.name} logo`} 
+            loading="lazy"
+            className="w-9 h-9 object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] transition-transform duration-300 group-hover:scale-110 relative z-10" 
+          />
+        )}
       </div>
-      <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
-        <motion.div
-          initial={{ width: 0 }}
-          animate={inView ? { width: `${level}%` } : { width: 0 }}
-          transition={{ duration: 1, delay, ease: 'easeOut' }}
-          className="h-full rounded-full bg-gradient-to-r from-indigo-500 to-purple-500"
-        />
-      </div>
-    </div>
+      <span className="text-sm font-semibold text-slate-400 group-hover:text-white transition-colors text-center font-mono tracking-tight">
+        {skill.name}
+      </span>
+    </motion.div>
   )
 }
 
@@ -127,14 +156,13 @@ export default function Skills() {
                 <h3 className="text-lg font-bold text-white">{category.title}</h3>
               </div>
 
-              {/* Skills */}
-              <div className="space-y-4">
+              {/* Skills Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
                 {category.skills.map((skill, skillIdx) => (
-                  <SkillBar
+                  <SkillLogo
                     key={skill.name}
-                    name={skill.name}
-                    level={skill.level}
-                    delay={catIdx * 0.15 + skillIdx * 0.08}
+                    skill={skill}
+                    delay={catIdx * 0.15 + skillIdx * 0.05}
                     inView={inView}
                   />
                 ))}
@@ -144,13 +172,13 @@ export default function Skills() {
         </div>
 
         {/* Floating tech badges */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-12 flex flex-wrap gap-3 justify-center"
         >
-          {['Socket.IO', 'JWT', 'Razorpay', 'Jest', 'Shadcn/UI', 'REST', 'GraphQL', 'CI/CD'].map((tech, i) => (
+          {['Socket.IO', 'JWT', 'Razorpay', 'Jest', 'Shadcn/UI', 'GraphQL', 'CI/CD'].map((tech, i) => (
             <motion.span
               key={tech}
               whileHover={{ scale: 1.1, y: -2 }}
@@ -159,7 +187,7 @@ export default function Skills() {
               {tech}
             </motion.span>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )
