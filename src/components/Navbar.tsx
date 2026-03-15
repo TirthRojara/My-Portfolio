@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Code2 } from 'lucide-react'
+import { Menu, X, Code2, Download } from 'lucide-react'
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -95,7 +95,7 @@ export default function Navbar() {
           </div>
 
           {/* CTA button */}
-          <div className="invisible">
+          {/* <div className="invisible">
             <motion.button
               onClick={() => handleNavClick('#contact')}
               whileHover={{ scale: 1.05 }}
@@ -103,6 +103,16 @@ export default function Navbar() {
               className="px-5 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-500 hover:to-purple-500 transition-all duration-200 shadow-lg shadow-indigo-500/25"
             >
               Hire Me
+            </motion.button>
+          </div> */}
+          <div className="">
+            <motion.button
+              onClick={() => handleNavClick('#contact')}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex flex-row gap-2 px-5 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-500 hover:to-purple-500 transition-all duration-200 shadow-lg shadow-indigo-500/25"
+            >
+              Download Resume <Download size={20} />
             </motion.button>
           </div>
 

@@ -3,9 +3,9 @@
 import { Github, Linkedin, Mail, Heart, Code2, ArrowUp } from 'lucide-react'
 
 const socialLinks = [
-  { icon: Github, href: 'https://github.com/Tirthrjr', label: 'GitHub' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/tirth-rojara', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:tirthrjr@gmail.com', label: 'Email' },
+  { icon: Github, href: 'https://github.com/Tirthrojara', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/in/tirth-rojara-26b73b317/', label: 'LinkedIn' },
+  { icon: Mail, href: 'mailto:work.tirthrojara@gmail.com', label: 'Email' },
 ]
 
 export default function Footer() {
@@ -25,7 +25,7 @@ export default function Footer() {
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
               <Code2 className="w-4 h-4 text-white" />
             </div>
-            <span className="font-bold gradient-text font-mono">TR.</span>
+            <span className="font-bold gradient-text font-mono">TR</span>
           </div>
 
           {/* Copyright */}
@@ -33,7 +33,7 @@ export default function Footer() {
             Built with <Heart className="w-3.5 h-3.5 text-red-500 fill-red-500" /> by{' '}
             <span className="text-slate-300 font-medium">Tirth Rojara</span>
             {' · '}
-            <span>{new Date().getFullYear()}</span>
+            <span>© {new Date().getFullYear()}</span>
           </p>
 
           {/* Social + scroll to top */}

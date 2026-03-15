@@ -9,8 +9,8 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'tirthrjr@gmail.com',
-    href: 'mailto:tirthrjr@gmail.com',
+    value: 'work.tirthrojara@gmail.com',
+    href: 'mailto:work.tirthrojara@gmail.com',
     color: 'text-red-400',
     bg: 'from-red-500/10 to-pink-500/10',
     border: 'border-red-500/20',
@@ -19,7 +19,7 @@ const contactInfo = [
     icon: Linkedin,
     label: 'LinkedIn',
     value: 'Tirth Rojara',
-    href: 'https://linkedin.com/in/tirth-rojara',
+    href: 'https://www.linkedin.com/in/tirth-rojara-26b73b317/',
     color: 'text-blue-400',
     bg: 'from-blue-500/10 to-cyan-500/10',
     border: 'border-blue-500/20',
@@ -27,8 +27,8 @@ const contactInfo = [
   {
     icon: Github,
     label: 'GitHub',
-    value: '@Tirthrjr',
-    href: 'https://github.com/Tirthrjr',
+    value: '@Tirthrojara',
+    href: 'https://github.com/Tirthrojara',
     color: 'text-purple-400',
     bg: 'from-purple-500/10 to-indigo-500/10',
     border: 'border-purple-500/20',
@@ -82,7 +82,7 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-10">
+        <div className="grid lg:grid-cols-1 gap-10">
           {/* Left - Info */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -104,38 +104,42 @@ export default function Contact() {
                 <div className="w-5 h-5 flex items-center justify-center shrink-0">
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
                 </div>
-                <span>Available for full-time / freelance roles</span>
+                <span>Available for full-time</span>
               </div>
             </div>
 
             {/* Contact cards */}
             <div className="space-y-4">
               {contactInfo.map((item, i) => (
-                <motion.a
+                <motion.div
                   key={item.label}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ delay: 0.3 + i * 0.1 }}
-                  whileHover={{ x: 6, scale: 1.01 }}
-                  className={`flex items-center gap-4 p-5 rounded-xl bg-gradient-to-r ${item.bg} border ${item.border} backdrop-blur-sm transition-all duration-200 group`}
+                  initial={{ opacity: 0, x: -40 }}
+                  animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -40 }}
+                  transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
                 >
-                  <div className={`w-10 h-10 rounded-xl ${item.bg} border ${item.border} flex items-center justify-center`}>
-                    <item.icon className={`w-5 h-5 ${item.color}`} />
-                  </div>
-                  <div>
-                    <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">{item.label}</p>
-                    <p className={`font-semibold ${item.color} group-hover:underline`}>{item.value}</p>
-                  </div>
-                </motion.a>
+                  <motion.a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ x: 6, scale: 1.01 }}
+                    transition={{ duration: 0.2 }}
+                    className={`flex items-center gap-4 p-5 rounded-xl bg-gradient-to-r ${item.bg} border ${item.border} backdrop-blur-sm group`}
+                  >
+                    <div className={`w-10 h-10 rounded-xl ${item.bg} border ${item.border} flex items-center justify-center`}>
+                      <item.icon className={`w-5 h-5 ${item.color}`} />
+                    </div>
+                    <div>
+                      <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">{item.label}</p>
+                      <p className={`font-semibold ${item.color} group-hover:underline`}>{item.value}</p>
+                    </div>
+                  </motion.a>
+                </motion.div>
               ))}
             </div>
           </motion.div>
 
           {/* Right - Contact form */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
@@ -197,10 +201,10 @@ export default function Contact() {
                   placeholder="Tell me about your project or opportunity..."
                   className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/8 text-white placeholder-slate-600 text-sm focus:border-indigo-500/50 focus:bg-white/8 transition-all duration-200 resize-none"
                 />
-              </div>
+              </div> */}
 
               {/* Status feedback */}
-              {status === 'success' && (
+              {/* {status === 'success' && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -231,7 +235,7 @@ export default function Contact() {
                 )}
               </motion.button>
             </form>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>
