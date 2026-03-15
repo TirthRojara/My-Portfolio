@@ -173,22 +173,22 @@ export default function Skills() {
         </div>
 
         {/* Floating tech badges */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.7 }}
           className="mt-6 glass border border-purple-500/20 rounded-2xl p-6 card-shine hover:shadow-xl shadow-purple-500/10 transition-all duration-300"
-        >
+        > */}
           {/* Category header */}
-          <div className="flex items-center gap-3 mb-6">
+          {/* <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-violet-500 flex items-center justify-center text-lg">
               🚀
             </div>
-            <h3 className="text-lg font-bold text-white">Also Familiar With</h3>
-          </div>
+            <h3 className="text-lg font-bold text-white">Other Tools & Technologies</h3>
+          </div> */}
 
           {/* Badges Grid */}
-          <div className="flex flex-wrap gap-3">
+          {/* <div className="flex flex-wrap gap-3">
             {['Socket.IO', 'JWT', 'Razorpay', 'Jest', 'Shadcn/UI', 'GraphQL', 'CI/CD'].map((tech, i) => (
               <motion.span
                 key={tech}
@@ -202,7 +202,7 @@ export default function Skills() {
               </motion.span>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )

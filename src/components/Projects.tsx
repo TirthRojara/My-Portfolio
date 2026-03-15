@@ -2,26 +2,31 @@
 
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
-import { ExternalLink, Github, Zap, Shield, Server, MessageCircle } from 'lucide-react'
+import { ExternalLink, Github, Zap, Shield, Server, MessageCircle, ShieldCheck, CreditCard, Layers, Lock, Radio, Database, TestTube, MonitorSmartphone, FlaskConical, Send } from 'lucide-react'
 
 const projects = [
   {
     id: 1,
     title: 'Job Portal',
     subtitle: 'Full Stack Application',
-    description: 'A production-grade job portal with real-time updates, subscription payments, and role-based access control. Built to scale horizontally using Redis Pub/Sub.',
+    description: 'A production-grade job portal featuring real-time updates, subscription payments, and role-based access control. Designed for horizontal scalability using Redis Pub/Sub and real-time communication with Socket.IO.',
     icon: '💼',
     gradient: 'from-indigo-600 to-purple-600',
     borderColor: 'border-indigo-500/20',
     glowColor: 'shadow-indigo-500/15',
-    tech: ['React', 'Node.js', 'Express.js', 'PostgreSQL', 'Redis', 'Socket.io', 'Razorpay'],
+    tech: ['Next.js', 'Node.js', 'Express.js', 'PostgreSQL', 'Redis', 'Socket.io', 'Razorpay', 'JWT', 'TypeScript'],
     features: [
+      { icon: CreditCard, text: 'Subscription system via Razorpay' },
+      { icon: Radio, text: 'WebSocket communication using Socket.IO' },
       { icon: Zap, text: 'Real-time updates via Socket.IO' },
+      { icon: Database, text: 'Redis caching for faster data access' },
       { icon: Server, text: 'Redis Pub/Sub for horizontal scaling' },
-      { icon: Shield, text: 'JWT auth with role-based access' },
-      { icon: Zap, text: 'Subscription system via Razorpay' },
+      { icon: ShieldCheck, text: 'Secure JWT-based authentication system' },
+      { icon: Lock, text: 'Role-based access control' },
+      { icon: MonitorSmartphone, text: 'Responsive UI optimized for mobile and desktop' },
+      { icon: Layers, text: 'Modular backend architecture for maintainability' }
     ],
-    github: 'https://github.com/Tirthrjr',
+    github: 'https://github.com/Tirthrojara',
     live: '#',
     badge: 'Featured',
   },
@@ -34,14 +39,17 @@ const projects = [
     gradient: 'from-emerald-600 to-teal-600',
     borderColor: 'border-emerald-500/20',
     glowColor: 'shadow-emerald-500/15',
-    tech: ['MongoDB', 'Express.js', 'React', 'Node.js', 'JWT', 'Jest'],
+    tech: ['React', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Jest', 'JavaScript', 'HTML', 'Tailwind CSS'],
     features: [
       { icon: Shield, text: 'JWT authentication & authorization' },
       { icon: Zap, text: 'Full CRUD for projects & tasks' },
       { icon: Server, text: 'RESTful API architecture' },
       { icon: Zap, text: 'API tested with Jest' },
+      { icon: Lock, text: 'Protected API routes with JWT middleware' },
+      { icon: FlaskConical, text: 'Backend API tested using Jest' },
+      { icon: MonitorSmartphone, text: 'Responsive UI optimized for mobile and desktop' }
     ],
-    github: 'https://github.com/Tirthrjr',
+    github: 'https://github.com/Tirthrojara/Project-Manager-Full-Stack',
     live: '#',
     badge: 'MERN',
   },
@@ -54,14 +62,16 @@ const projects = [
     gradient: 'from-orange-600 to-pink-600',
     borderColor: 'border-orange-500/20',
     glowColor: 'shadow-orange-500/15',
-    tech: ['Node.js', 'Express.js', 'Socket.IO', 'JavaScript'],
+    tech: ['Node.js', 'Express.js', 'Socket.IO', 'JavaScript', 'HTML', 'CSS'],
     features: [
+      { icon: Radio, text: 'WebSocket communication via Socket.IO' },
       { icon: MessageCircle, text: 'Real-time bidirectional messaging' },
       { icon: Server, text: 'Room-based chat system' },
-      { icon: Zap, text: 'Active users list & presence' },
+      { icon: Zap, text: 'Active users list & presence tracking' },
       { icon: Shield, text: 'Unique username enforcement' },
+      { icon: Send, text: 'Instant message broadcasting within rooms' },
     ],
-    github: 'https://github.com/Tirthrjr',
+    github: 'https://github.com/Tirthrojara/Real-Time-Chat-App',
     live: '#',
     badge: 'Socket.IO',
   },
@@ -80,6 +90,11 @@ const techColors: Record<string, string> = {
   JWT: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
   Jest: 'text-red-300 bg-red-500/10 border-red-500/20',
   JavaScript: 'text-yellow-400 bg-yellow-500/10 border-yellow-500/20',
+  'Next.js': 'text-white bg-white/10 border-white/20',
+  'Tailwind CSS': 'text-sky-400 bg-sky-500/10 border-sky-500/20',
+  TypeScript: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
+  HTML: 'text-orange-400 bg-orange-500/10 border-orange-500/20',
+  CSS: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
 }
 
 export default function Projects() {
@@ -145,13 +160,13 @@ export default function Projects() {
                   </span>
                 </div>
 
-                <p className="text-slate-400 text-sm leading-relaxed">{project.description}</p>
+                <p className="text-slate-300 text-sm leading-relaxed">{project.description}</p>
               </div>
 
               {/* Features */}
               <div className="px-6 pb-4 space-y-2">
                 {project.features.map((feat, fi) => (
-                  <div key={fi} className="flex items-center gap-2 text-xs text-slate-400">
+                  <div key={fi} className="flex items-center gap-2 text-xs text-slate-300">
                     <feat.icon className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
                     <span>{feat.text}</span>
                   </div>
@@ -204,7 +219,7 @@ export default function Projects() {
           className="text-center mt-10"
         >
           <a
-            href="https://github.com/Tirthrjr"
+            href="https://github.com/Tirthrojara"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors duration-200 font-medium"

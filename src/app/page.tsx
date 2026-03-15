@@ -29,7 +29,7 @@ export default function Home() {
         <About />
         <Skills />
         <Projects />
-        <GitHubSection />
+        {/* <GitHubSection /> */}
         <Contact />
         <Footer />
       </div>
