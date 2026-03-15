@@ -5,10 +5,10 @@ import { motion } from 'framer-motion'
 import { Github, Star, GitFork, Activity, ExternalLink } from 'lucide-react'
 import Image from 'next/image'
 
-const GITHUB_USERNAME = 'Tirthrjr'
+const GITHUB_USERNAME = 'Tirthrojara'
 
 const stats = [
-  { label: 'GitHub Username', value: '@Tirthrjr', icon: Github },
+  { label: 'GitHub Username', value: '@Tirthrojara', icon: Github },
   { label: 'Focus Area', value: 'MERN Stack', icon: Activity },
   { label: 'Status', value: 'Open to Work', icon: Star },
 ]
@@ -42,7 +42,7 @@ export default function GitHubSection() {
         </motion.div>
 
         {/* GitHub stats cards */}
-        <div className="grid lg:grid-cols-3 gap-6 mb-10">
+        <div className="grid lg:grid-cols-2 gap-6 mb-10">
           {/* Profile Card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -71,7 +71,7 @@ export default function GitHubSection() {
           </motion.div>
 
           {/* Stats image */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 }}
@@ -85,7 +85,7 @@ export default function GitHubSection() {
                 loading="lazy"
               />
             </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Top languages */}
           <motion.div

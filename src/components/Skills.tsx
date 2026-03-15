@@ -49,6 +49,7 @@ const skillCategories = [
       { name: 'Socket.IO', logo: 'socketdotio/white' },
       { name: 'Razorpay', logo: 'razorpay/white' },
       { name: 'JWT', logo: 'jsonwebtokens/white' },
+      { name: 'Zod', logo: 'zod/408AFF' },
     ],
   },
   {
@@ -173,20 +174,34 @@ export default function Skills() {
 
         {/* Floating tech badges */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="mt-12 flex flex-wrap gap-3 justify-center"
+          className="mt-6 glass border border-purple-500/20 rounded-2xl p-6 card-shine hover:shadow-xl shadow-purple-500/10 transition-all duration-300"
         >
-          {['Socket.IO', 'JWT', 'Razorpay', 'Jest', 'Shadcn/UI', 'GraphQL', 'CI/CD'].map((tech, i) => (
-            <motion.span
-              key={tech}
-              whileHover={{ scale: 1.1, y: -2 }}
-              className="px-4 py-2 rounded-full glass border border-white/8 text-sm font-mono font-medium text-slate-400 hover:text-white hover:border-purple-500/40 transition-all duration-200 cursor-default"
-            >
-              {tech}
-            </motion.span>
-          ))}
+          {/* Category header */}
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-500 to-violet-500 flex items-center justify-center text-lg">
+              🚀
+            </div>
+            <h3 className="text-lg font-bold text-white">Also Familiar With</h3>
+          </div>
+
+          {/* Badges Grid */}
+          <div className="flex flex-wrap gap-3">
+            {['Socket.IO', 'JWT', 'Razorpay', 'Jest', 'Shadcn/UI', 'GraphQL', 'CI/CD'].map((tech, i) => (
+              <motion.span
+                key={tech}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.5, delay: 0.7 + i * 0.05, type: 'spring', stiffness: 200, damping: 10 }}
+                whileHover={{ scale: 1.1, y: -2 }}
+                className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-mono font-medium text-slate-300 hover:text-white hover:bg-white/10 hover:border-purple-500/40 transition-all duration-200 cursor-default"
+              >
+                {tech}
+              </motion.span>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
