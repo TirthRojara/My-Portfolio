@@ -46,6 +46,15 @@ export default function Navbar() {
     }, 250)
   }
 
+  const handleDownloadResume = () => {
+    const link = document.createElement('a')
+    link.href = '/resume.pdf' // This points to the file in your public folder
+    link.download = 'Tirth_Rojara_Resume.pdf' // The name the file will be downloaded as
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
@@ -107,7 +116,7 @@ export default function Navbar() {
           </div> */}
           <div className="">
             <motion.button
-              onClick={() => handleNavClick('#contact')}
+              onClick={() => handleDownloadResume()}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex flex-row gap-2 px-5 py-2 text-sm font-semibold rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-500 hover:to-purple-500 transition-all duration-200 shadow-lg shadow-indigo-500/25"
