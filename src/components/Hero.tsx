@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronDown, Sparkles, ArrowRight } from 'lucide-react'
 
-const TYPING_TEXTS = ['MERN Stack Developer', 'Full Stack Web Developer', 'React Developer', 'Node.js Developer', 'Backend Engineer']
+const TYPING_TEXTS = ['Full Stack Web Developer', 'MERN Stack Developer', 'React Developer', 'Node.js Developer', 'Backend Engineer']
 
 export default function Hero() {
   const textRef = useRef<HTMLSpanElement>(null)
