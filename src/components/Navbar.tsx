@@ -46,13 +46,21 @@ export default function Navbar() {
     }, 250)
   }
 
-  const handleDownloadResume = () => {
-    const link = document.createElement('a')
-    link.href = '/resume.pdf' // This points to the file in your public folder
-    link.download = 'Tirth_Rojara_Resume.pdf' // The name the file will be downloaded as
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+  const handleDownloadResume = async () => {
+    try {
+      const response = await fetch('/resume.pdf')
+      const blob = await response.blob()
+      const url = window.URL.createObjectURL(blob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = 'Tirth_Rojara_Resume.pdf'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+      window.URL.revokeObjectURL(url)
+    } catch (error) {
+      console.error('Error downloading the resume:', error)
+    }
   }
 
   return (
