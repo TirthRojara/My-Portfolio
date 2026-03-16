@@ -1,4 +1,5 @@
 'use client'
+import { track } from '@vercel/analytics';
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -58,6 +59,7 @@ export default function Navbar() {
       link.click()
       document.body.removeChild(link)
       window.URL.revokeObjectURL(url)
+      track('Resume Downloaded');
     } catch (error) {
       console.error('Error downloading the resume:', error)
     }
