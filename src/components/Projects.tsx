@@ -198,6 +198,8 @@ export default function Projects() {
                 </a>
                 <a
                   href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 text-sm font-medium text-white hover:from-indigo-500 hover:to-purple-500 transition-all duration-200"
                 >
                   <ExternalLink className="w-4 h-4" />
