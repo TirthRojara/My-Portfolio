@@ -87,23 +87,23 @@ function SkillLogo({ skill, delay, inView }: { skill: Skill; delay: number; inVi
       initial={{ opacity: 0, scale: 0.8 }}
       animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
       transition={{ duration: 0.5, delay, type: 'spring', stiffness: 200, damping: 10 }}
-      whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.15, ease: 'easeOut' } }}
-      className="flex flex-col items-center justify-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-150 group cursor-default shadow-lg hover:shadow-xl"
+      whileHover={{ scale: 1.05, y: -5, transition: { duration: 0.08, ease: 'easeOut' } }}
+      className="flex flex-col items-center justify-center gap-3 p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-75 group cursor-default shadow-lg hover:shadow-xl"
     >
       <div className="w-12 h-12 flex items-center justify-center relative">
-        <div className="absolute inset-0 bg-white/5 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 bg-white/5 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-75" />
         {Icon ? (
-          <Icon className={`w-9 h-9 ${skill.color} relative z-10 transition-transform duration-300 group-hover:scale-110`} />
+          <Icon className={`w-9 h-9 ${skill.color} relative z-10 transition-transform duration-75 group-hover:scale-110`} />
         ) : (
           <img 
             src={`https://cdn.simpleicons.org/${skill.logo}`} 
             alt={`${skill.name} logo`} 
             loading="lazy"
-            className="w-9 h-9 object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] transition-transform duration-300 group-hover:scale-110 relative z-10" 
+            className="w-9 h-9 object-contain drop-shadow-[0_0_8px_rgba(255,255,255,0.1)] transition-transform duration-75 group-hover:scale-110 relative z-10" 
           />
         )}
       </div>
-      <span className="text-sm font-semibold text-slate-400 group-hover:text-white transition-colors text-center font-mono tracking-tight">
+      <span className="text-sm font-semibold text-slate-400 group-hover:text-white transition-colors duration-75 text-center font-mono tracking-tight">
         {skill.name}
       </span>
     </motion.div>
