@@ -2,25 +2,27 @@
 
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
-import { ExternalLink, Github, Zap, Shield, Server, MessageCircle, ShieldCheck, CreditCard, Layers, Lock, Radio, Database, TestTube, MonitorSmartphone, FlaskConical, Send } from 'lucide-react'
+import { ExternalLink, Github, Zap, Shield, Server, MessageCircle, ShieldCheck, CreditCard, Layers, Lock, Radio, Database, TestTube, MonitorSmartphone, FlaskConical, Send, Sparkles } from 'lucide-react'
 
 const projects = [
   {
     id: 1,
     title: 'Job Portal',
     subtitle: 'Full Stack Application',
-    description: 'A production-grade job portal featuring real-time updates, subscription payments, and role-based access control. Designed for horizontal scalability using Redis Pub/Sub and real-time communication with Socket.IO.',
+    // description: 'A production-grade job portal featuring real-time updates, subscription payments, and role-based access control. Designed for horizontal scalability using Redis Pub/Sub and real-time communication with Socket.IO.',
+    description: 'A production-grade job portal featuring real-time updates, subscription payments, role-based access control, and AI-powered content generation. Designed for horizontal scalability with Redis Pub/Sub and real-time communication via Socket.IO.',
     icon: '💼',
     gradient: 'from-indigo-600 to-purple-600',
     borderColor: 'border-indigo-500/20',
     glowColor: 'shadow-indigo-500/15',
     tech: ['Next.js', 'Node.js', 'Express.js', 'PostgreSQL', 'Redis', 'Socket.io', 'Razorpay', 'JWT', 'TypeScript'],
     features: [
+      { icon: Sparkles, text: 'AI-powered job & candidate content generation' },
       { icon: CreditCard, text: 'Subscription system via Razorpay' },
       { icon: Radio, text: 'WebSocket communication using Socket.IO' },
       { icon: Zap, text: 'Real-time updates via Socket.IO' },
       { icon: Database, text: 'Redis caching for faster data access' },
-      { icon: Server, text: 'Redis Pub/Sub for horizontal scaling' },
+      // { icon: Server, text: 'Redis Pub/Sub for horizontal scaling' },
       { icon: ShieldCheck, text: 'Secure JWT-based authentication system' },
       { icon: Lock, text: 'Role-based access control' },
       { icon: MonitorSmartphone, text: 'Responsive UI optimized for mobile and desktop' },
