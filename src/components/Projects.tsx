@@ -29,7 +29,7 @@ const projects = [
       { icon: Layers, text: 'Modular backend architecture for maintainability' }
     ],
     github: 'https://github.com/TirthRojara/Job-portal-backend',
-    live: 'https://jobportal.tirthrojara.in/login',
+    // live: 'https://jobportal.tirthrojara.in/login',
     badge: 'Featured',
   },
   {
@@ -52,7 +52,7 @@ const projects = [
       { icon: MonitorSmartphone, text: 'Responsive UI optimized for mobile and desktop' }
     ],
     github: 'https://github.com/Tirthrojara/Project-Manager-Full-Stack',
-    live: 'https://vercel-project-manager-frontend.vercel.app',
+    // live: 'https://vercel-project-manager-frontend.vercel.app',
     badge: 'MERN',
   },
   {
@@ -74,7 +74,7 @@ const projects = [
       { icon: Send, text: 'Instant message broadcasting within rooms' },
     ],
     github: 'https://github.com/Tirthrojara/Real-Time-Chat-App',
-    live: 'https://real-time-chat-app-1ba0.onrender.com',
+    // live: 'https://real-time-chat-app-1ba0.onrender.com',
     badge: 'Socket.IO',
   },
 ]
@@ -198,7 +198,7 @@ export default function Projects() {
                   <Github className="w-4 h-4" />
                   Code
                 </a>
-                <a
+                {/* <a
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -206,7 +206,7 @@ export default function Projects() {
                 >
                   <ExternalLink className="w-4 h-4" />
                   Live Demo
-                </a>
+                </a> */}
               </div>
 
               {/* Hover glow layer */}
