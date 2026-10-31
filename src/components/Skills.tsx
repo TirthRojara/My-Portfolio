@@ -22,6 +22,7 @@ const skillCategories = [
     skills: [
       { name: 'Next.js', logo: 'nextdotjs/white' },
       { name: 'React.js', logo: 'react/61DAFB' },
+      { name: 'React Native', logo: 'react/61DAFB' },
       { name: 'JavaScript', logo: 'javascript/F7DF1E' },
       { name: 'TypeScript', logo: 'typescript/3178C6' },
       { name: 'HTML5', logo: 'html5/E34F26' },
